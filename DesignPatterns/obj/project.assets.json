@@ -8,34 +8,32 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\William.Sanchez\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\wsanchez\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\William.Sanchez\\source\\repos\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
+      "projectUniqueName": "C:\\Users\\wsanchez\\OneDrive - Online Business Systems\\Desktop\\Alejandro2021\\Study\\C#\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
       "projectName": "DesignPatterns",
-      "projectPath": "C:\\Users\\William.Sanchez\\source\\repos\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
-      "packagesPath": "C:\\Users\\William.Sanchez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\William.Sanchez\\source\\repos\\DesignPatterns\\DesignPatterns\\obj\\",
+      "projectPath": "C:\\Users\\wsanchez\\OneDrive - Online Business Systems\\Desktop\\Alejandro2021\\Study\\C#\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
+      "packagesPath": "C:\\Users\\wsanchez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wsanchez\\OneDrive - Online Business Systems\\Desktop\\Alejandro2021\\Study\\C#\\DesignPatterns\\DesignPatterns\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\William.Sanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\wsanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v2": {},
-        "https://www.powershellgallery.com/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -67,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
