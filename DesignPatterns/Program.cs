@@ -3,12 +3,14 @@ using DesignPatterns.CommandPattern.Editor;
 using DesignPatterns.CommandPattern.Fx;
 using DesignPatterns.Exercises.CommandPattern;
 using DesignPatterns.Exercises.IteratorPattern;
+using DesignPatterns.Exercises.Mediator;
 using DesignPatterns.Exercises.Memento;
 using DesignPatterns.Exercises.ObserverPattern;
 using DesignPatterns.Exercises.StatePattern;
 using DesignPatterns.Exercises.Strategy;
 using DesignPatterns.Exercises.TemplateMethod;
 using DesignPatterns.Iterator;
+using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.MethodTemplate;
 using DesignPatterns.Observer;
@@ -23,6 +25,17 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            //For desktop and mobile applications
+            #region MediatorPattern 
+
+            //var arti = new ArticlesDialogBox();
+            //arti.Simulation();
+
+            var arti = new SignUpWindow();
+            arti.SimulateBehavior();
+            
+            #endregion
+
             #region ObserverPattern
 
             #region General
@@ -54,7 +67,7 @@ namespace DesignPatterns
             //ds1.SetValue(2);
 
             #endregion
-            
+
             #region pullStyle
             //var ds2 = new Observer.PullStyle.DataSource();
 
@@ -83,7 +96,7 @@ namespace DesignPatterns
             //sb.AddStock(s);
             //sb.AddStock(s1);
             //sb.AddStock(s2);
-            
+
             //slv.AddStock(s);
             //slv.AddStock(s1);
             //slv.AddStock(s2);
