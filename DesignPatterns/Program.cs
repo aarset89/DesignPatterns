@@ -1,6 +1,8 @@
-﻿using DesignPatterns.CommandPattern;
+﻿using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.CommandPattern;
 using DesignPatterns.CommandPattern.Editor;
 using DesignPatterns.CommandPattern.Fx;
+using DesignPatterns.Exercises.ChainOfResposibility;
 using DesignPatterns.Exercises.CommandPattern;
 using DesignPatterns.Exercises.IteratorPattern;
 using DesignPatterns.Exercises.Mediator;
@@ -25,15 +27,35 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+            #region Chain of resposibility
+
+            //var compressor = new Compressor(null);
+            ////var logger = new Logger(compressor);
+            //var enc = new Encryptor(compressor);
+            //var auth = new Authenticator(enc);
+            //var server = new WebServer(auth);
+            //server.Handle(new HttpRequest { Username = "abc", Password = "123" });
+
+
+            var excel = new ExcelFormat(null);
+            var quick = new QuickBookFormat(excel);
+            var Number = new NumbersFormat(quick);
+            var dataReader = new DataReader(Number);
+
+            dataReader.Handle(new File { FileName = "asdas.qwbe" });
+
+            #endregion
+
             //For desktop and mobile applications
             #region MediatorPattern 
 
-            //var arti = new ArticlesDialogBox();
-            //arti.Simulation();
+            ////var arti = new ArticlesDialogBox();
+            ////arti.Simulation();
 
-            var arti = new SignUpWindow();
-            arti.SimulateBehavior();
-            
+            //var arti = new SignUpWindow();
+            //arti.SimulateBehavior();
+
             #endregion
 
             #region ObserverPattern
