@@ -11,6 +11,8 @@ using DesignPatterns.Exercises.ObserverPattern;
 using DesignPatterns.Exercises.StatePattern;
 using DesignPatterns.Exercises.Strategy;
 using DesignPatterns.Exercises.TemplateMethod;
+using DesignPatterns.Exercises.VisitorPattern;
+using DesignPatterns.Exercises.VisitorPattern.Filters;
 using DesignPatterns.Iterator;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
@@ -19,6 +21,7 @@ using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.State.Abuse;
 using DesignPatterns.Strategy;
+using DesignPatterns.Visitor;
 using System;
 
 namespace DesignPatterns
@@ -27,6 +30,26 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Visitor Pattern
+
+            //var htmlDoc =  new Visitor.HtmlDocument();
+            //var anchor = new AnchorNode();
+            //var heading = new HeadingNode();
+
+            //htmlDoc.AddNode(anchor);
+            //htmlDoc.AddNode(heading);
+
+            //htmlDoc.Execute(new HighlightOperation());
+            //htmlDoc.Execute(new PlainTextOperation());
+
+            var wavFile = new WavFile();
+
+            wavFile = wavFile.ReadFile("asd");
+
+            wavFile.ApplyFilter(new NormalizeFilter());
+            wavFile.ApplyFilter(new ReverbFilter());
+
+            #endregion
 
             #region Chain of resposibility
 
@@ -38,12 +61,12 @@ namespace DesignPatterns
             //server.Handle(new HttpRequest { Username = "abc", Password = "123" });
 
 
-            var excel = new ExcelFormat(null);
-            var quick = new QuickBookFormat(excel);
-            var Number = new NumbersFormat(quick);
-            var dataReader = new DataReader(Number);
+            //var excel = new ExcelFormat(null);
+            //var quick = new QuickBookFormat(excel);
+            //var Number = new NumbersFormat(quick);
+            //var dataReader = new DataReader(Number);
 
-            dataReader.Handle(new File { FileName = "asdas.qwbe" });
+            //dataReader.Handle(new File { FileName = "asdas.qwbe" });
 
             #endregion
 
