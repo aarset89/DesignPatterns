@@ -2,8 +2,10 @@
 using DesignPatterns.CommandPattern;
 using DesignPatterns.CommandPattern.Editor;
 using DesignPatterns.CommandPattern.Fx;
+using DesignPatterns.Composite;
 using DesignPatterns.Exercises.ChainOfResposibility;
 using DesignPatterns.Exercises.CommandPattern;
+using DesignPatterns.Exercises.Composite;
 using DesignPatterns.Exercises.IteratorPattern;
 using DesignPatterns.Exercises.Mediator;
 using DesignPatterns.Exercises.Memento;
@@ -30,6 +32,40 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region CompositePattern
+
+            //var group1 = new Group();
+            //group1.AddComponent(new Shape());
+            //group1.AddComponent(new Shape());
+
+            //var group2 = new Group();
+            //group2.AddComponent(new Shape());
+            //group2.AddComponent(new Shape());
+
+            //var group3 = new Group();
+            //group3.AddComponent(group1);
+            //group3.AddComponent(group2);
+
+            //group3.Render();
+
+
+            var team1 = new Team();
+            team1.AddComponent(new Human());
+            team1.AddComponent(new Human());
+            team1.AddComponent(new Truck());
+
+            var team2 = new Team();
+            team2.AddComponent(new Human());
+            team2.AddComponent(new Human());
+            team2.AddComponent(new Truck());
+
+            var team = new Team();
+            team.AddComponent(team1);
+            team.AddComponent(team2);
+
+            team.GoToEmergency();
+            #endregion
+
             #region Visitor Pattern
 
             //var htmlDoc =  new Visitor.HtmlDocument();
@@ -42,12 +78,12 @@ namespace DesignPatterns
             //htmlDoc.Execute(new HighlightOperation());
             //htmlDoc.Execute(new PlainTextOperation());
 
-            var wavFile = new WavFile();
+            //var wavFile = new WavFile();
 
-            wavFile = wavFile.ReadFile("asd");
+            //wavFile = wavFile.ReadFile("asd");
 
-            wavFile.ApplyFilter(new NormalizeFilter());
-            wavFile.ApplyFilter(new ReverbFilter());
+            //wavFile.ApplyFilter(new NormalizeFilter());
+            //wavFile.ApplyFilter(new ReverbFilter());
 
             #endregion
 
