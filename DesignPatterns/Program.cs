@@ -3,6 +3,8 @@ using DesignPatterns.CommandPattern;
 using DesignPatterns.CommandPattern.Editor;
 using DesignPatterns.CommandPattern.Fx;
 using DesignPatterns.Composite;
+using DesignPatterns.Adapter;
+using DesignPatterns.Adapter.AvaFilter;
 using DesignPatterns.Exercises.ChainOfResposibility;
 using DesignPatterns.Exercises.CommandPattern;
 using DesignPatterns.Exercises.Composite;
@@ -25,6 +27,8 @@ using DesignPatterns.State.Abuse;
 using DesignPatterns.Strategy;
 using DesignPatterns.Visitor;
 using System;
+using DesignPatterns.Exercises.Adapter;
+using DesignPatterns.Exercises.Adapter.Gmail;
 
 namespace DesignPatterns
 {
@@ -32,6 +36,22 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+            #region Adapter
+
+            //var imageView = new ImageView(new Image());
+            //imageView.Apply(new VividFilter());
+            //imageView.Apply(new CaramelFilter(new Caramel()));
+
+            var emailClient = new EmailClient();
+
+            emailClient.AddProvider(new GmailAdapter());
+            //emailClient.AddProvider(new GmailAdapter(new GmailClient()));
+
+            emailClient.DownloadEmails();
+
+            #endregion
+
             #region CompositePattern
 
             //var group1 = new Group();
@@ -49,21 +69,21 @@ namespace DesignPatterns
             //group3.Render();
 
 
-            var team1 = new Team();
-            team1.AddComponent(new Human());
-            team1.AddComponent(new Human());
-            team1.AddComponent(new Truck());
+            //var team1 = new Team();
+            //team1.AddComponent(new Human());
+            //team1.AddComponent(new Human());
+            //team1.AddComponent(new Truck());
 
-            var team2 = new Team();
-            team2.AddComponent(new Human());
-            team2.AddComponent(new Human());
-            team2.AddComponent(new Truck());
+            //var team2 = new Team();
+            //team2.AddComponent(new Human());
+            //team2.AddComponent(new Human());
+            //team2.AddComponent(new Truck());
 
-            var team = new Team();
-            team.AddComponent(team1);
-            team.AddComponent(team2);
+            //var team = new Team();
+            //team.AddComponent(team1);
+            //team.AddComponent(team2);
 
-            team.GoToEmergency();
+            //team.GoToEmergency();
             #endregion
 
             #region Visitor Pattern
