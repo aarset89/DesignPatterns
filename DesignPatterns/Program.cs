@@ -29,6 +29,7 @@ using DesignPatterns.Visitor;
 using System;
 using DesignPatterns.Exercises.Adapter;
 using DesignPatterns.Exercises.Adapter.Gmail;
+using DesignPatterns.Decorator;
 
 namespace DesignPatterns
 {
@@ -36,6 +37,23 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Decorator
+
+            //var cloudStream = new CloudStream();
+            //var compCloudStream = new CompressedCloudStream(cloudStream);
+            //var encCloudStream = new EncryptedCloudStream(compCloudStream);
+            //encCloudStream.Write("Data is here ready to store in the cloud");
+
+            //var cs = new CompressedCloudStream(new EncryptedCloudStream(new CloudStream()));
+
+            //cs.Write("hdgjaskdjgqjghw");
+
+            //var cs2 = new CloudStream();
+            //cs2.Write("uoiuotuoiuo");
+
+            var editor = new Exercises.Decorator.Editor();
+            editor.OpenProject();
+            #endregion
 
             #region Adapter
 
@@ -43,12 +61,12 @@ namespace DesignPatterns
             //imageView.Apply(new VividFilter());
             //imageView.Apply(new CaramelFilter(new Caramel()));
 
-            var emailClient = new EmailClient();
+            //var emailClient = new EmailClient();
 
-            emailClient.AddProvider(new GmailAdapter());
-            //emailClient.AddProvider(new GmailAdapter(new GmailClient()));
+            //emailClient.AddProvider(new GmailAdapter());
+            ////emailClient.AddProvider(new GmailAdapter(new GmailClient()));
 
-            emailClient.DownloadEmails();
+            //emailClient.DownloadEmails();
 
             #endregion
 
