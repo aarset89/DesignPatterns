@@ -30,6 +30,8 @@ using System;
 using DesignPatterns.Exercises.Adapter;
 using DesignPatterns.Exercises.Adapter.Gmail;
 using DesignPatterns.Decorator;
+using DesignPatterns.Facade;
+using DesignPatterns.Exercises.Facade;
 
 namespace DesignPatterns
 {
@@ -37,6 +39,29 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Facade
+
+            //var server = new NotificationServer();
+            //var connection = server.Connect("IP");
+            //var auth = server.Authenticate("AppId", "key");
+            //var message = new Message("New message from main");
+            //server.Send(auth, message, "target");
+            //connection.Disconnect();
+
+            //var notificationService = new NotificationService();
+            //notificationService.Send("hello", "all");
+
+            //var twitterClient = new TwitterClient();
+            //var oAuth = new OAuth();
+            //var token = oAuth.RequestToken("", "");
+            //var accessToken = oAuth.GetAccessToken(token);
+            //twitterClient.GetTweets(accessToken);
+
+            var twservice = new TwitterService();
+            twservice.Gettweets("");
+
+            #endregion
+
             #region Decorator
 
             //var cloudStream = new CloudStream();
@@ -51,8 +76,8 @@ namespace DesignPatterns
             //var cs2 = new CloudStream();
             //cs2.Write("uoiuotuoiuo");
 
-            var editor = new Exercises.Decorator.Editor();
-            editor.OpenProject();
+            //var editor = new Exercises.Decorator.Editor();
+            //editor.OpenProject();
             #endregion
 
             #region Adapter
