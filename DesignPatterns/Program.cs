@@ -34,6 +34,7 @@ using DesignPatterns.Facade;
 using DesignPatterns.Exercises.Facade;
 using DesignPatterns.Flyweight;
 using DesignPatterns.Exercises.Flyweight;
+using DesignPatterns.Bridge;
 
 namespace DesignPatterns
 {
@@ -41,6 +42,15 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Brige
+
+            var newDevice = new AdvanceControl(new SamsungDevice());
+            newDevice.TurnOn();
+            newDevice.TurnOff();
+            newDevice.SetChannel(2);
+
+            #endregion
+
             #region Flyweight
 
             //var pointService = new PointService(new PointIconFactory());
@@ -50,15 +60,15 @@ namespace DesignPatterns
             //foreach(var point in points)
             //    point.Draw();
 
-            var sheet = new SpreadSheet(new CellContextFactory());
-            sheet.SetContent(0, 0, "Hello");
-            sheet.SetContent(1, 0, "World");
-            sheet.SetFontFamily(0, 0, "Arial");
-            sheet.SetFontSize(0, 0, 15);
-            sheet.SetIsBold(0, 0, false);
-            sheet.SetFontFamily(2, 0, "Arial");
+            //var sheet = new SpreadSheet(new CellContextFactory());
+            //sheet.SetContent(0, 0, "Hello");
+            //sheet.SetContent(1, 0, "World");
+            //sheet.SetFontFamily(0, 0, "Arial");
+            //sheet.SetFontSize(0, 0, 15);
+            //sheet.SetIsBold(0, 0, false);
+            //sheet.SetFontFamily(2, 0, "Arial");
 
-            sheet.Render();
+            //sheet.Render();
 
             #endregion
 
