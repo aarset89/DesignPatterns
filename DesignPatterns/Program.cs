@@ -32,6 +32,8 @@ using DesignPatterns.Exercises.Adapter.Gmail;
 using DesignPatterns.Decorator;
 using DesignPatterns.Facade;
 using DesignPatterns.Exercises.Facade;
+using DesignPatterns.Flyweight;
+using DesignPatterns.Exercises.Flyweight;
 
 namespace DesignPatterns
 {
@@ -39,6 +41,27 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Flyweight
+
+            //var pointService = new PointService(new PointIconFactory());
+
+            //var points = pointService.GetPoints();
+
+            //foreach(var point in points)
+            //    point.Draw();
+
+            var sheet = new SpreadSheet(new CellContextFactory());
+            sheet.SetContent(0, 0, "Hello");
+            sheet.SetContent(1, 0, "World");
+            sheet.SetFontFamily(0, 0, "Arial");
+            sheet.SetFontSize(0, 0, 15);
+            sheet.SetIsBold(0, 0, false);
+            sheet.SetFontFamily(2, 0, "Arial");
+
+            sheet.Render();
+
+            #endregion
+
             #region Facade
 
             //var server = new NotificationServer();
@@ -57,8 +80,8 @@ namespace DesignPatterns
             //var accessToken = oAuth.GetAccessToken(token);
             //twitterClient.GetTweets(accessToken);
 
-            var twservice = new TwitterService();
-            twservice.Gettweets("");
+            //var twservice = new TwitterService();
+            //twservice.Gettweets("");
 
             #endregion
 
