@@ -37,6 +37,8 @@ using DesignPatterns.Exercises.Flyweight;
 using DesignPatterns.Bridge;
 using DesignPatterns.Proxy;
 using DesignPatterns.Exercises.Proxy;
+using DesignPatterns.Prototype;
+using DesignPatterns.Exercises.Protorype;
 
 namespace DesignPatterns
 {
@@ -44,6 +46,25 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            #region Prototye
+
+            //var c = new ContextMenu();
+
+            //c.Duplicate(new Circle());
+            //c.Duplicate(new Square());
+
+            var timeLine = new Timeline();
+            var text = new Text("Text 1");
+            timeLine.AddComponent(text);
+            var audio = new Audio();
+            timeLine.AddComponent(audio);
+            var context = new Exercises.Protorype.ContextMenu(timeLine);
+
+            context.Duplicate(text);
+            timeLine.Show();
+
+            #endregion
+
             #region Proxy
             //var lib = new Library();
             //string[] fileNames = { "a", "b", "c" };
@@ -54,16 +75,16 @@ namespace DesignPatterns
             //lib.LoadEbook("c");
             //lib.LoadEbook("a");
 
-            var dbContext = new DbContext();
+            //var dbContext = new DbContext();
 
-            var product = dbContext.GetProduct(1);
-            product.SetName("product 1");
+            //var product = dbContext.GetProduct(1);
+            //product.SetName("product 1");
 
-            dbContext.SaveChanges();
+            //dbContext.SaveChanges();
 
-            product.SetName("Product 2");
+            //product.SetName("Product 2");
 
-            dbContext.SaveChanges();
+            //dbContext.SaveChanges();
 
 
 
