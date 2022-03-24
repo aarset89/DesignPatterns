@@ -35,6 +35,8 @@ using DesignPatterns.Exercises.Facade;
 using DesignPatterns.Flyweight;
 using DesignPatterns.Exercises.Flyweight;
 using DesignPatterns.Bridge;
+using DesignPatterns.Proxy;
+using DesignPatterns.Exercises.Proxy;
 
 namespace DesignPatterns
 {
@@ -42,12 +44,38 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            #region Brige
+            #region Proxy
+            //var lib = new Library();
+            //string[] fileNames = { "a", "b", "c" };
+            //foreach(string file in fileNames)
+            //    lib.AddEbook(new LoggingEbookProxy(file));
 
-            var newDevice = new AdvanceControl(new SamsungDevice());
-            newDevice.TurnOn();
-            newDevice.TurnOff();
-            newDevice.SetChannel(2);
+            //lib.LoadEbook("a");
+            //lib.LoadEbook("c");
+            //lib.LoadEbook("a");
+
+            var dbContext = new DbContext();
+
+            var product = dbContext.GetProduct(1);
+            product.SetName("product 1");
+
+            dbContext.SaveChanges();
+
+            product.SetName("Product 2");
+
+            dbContext.SaveChanges();
+
+
+
+            #endregion
+
+
+            #region Bridge
+
+            //var newDevice = new AdvanceControl(new SamsungDevice());
+            //newDevice.TurnOn();
+            //newDevice.TurnOff();
+            //newDevice.SetChannel(2);
 
             #endregion
 
