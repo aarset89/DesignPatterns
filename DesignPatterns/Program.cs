@@ -39,6 +39,7 @@ using DesignPatterns.Proxy;
 using DesignPatterns.Exercises.Proxy;
 using DesignPatterns.Prototype;
 using DesignPatterns.Exercises.Protorype;
+using DesignPatterns.Singleton;
 
 namespace DesignPatterns
 {
@@ -46,6 +47,26 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+            #region Singleton
+                        
+            //var config = ConfigManager.GetInstance();
+            //config.Add("name", "William");
+
+            //var config2 = ConfigManager.GetInstance();
+            //config2.Get("name");
+
+
+            var logger1 = Exercises.Singleton.Logger.GetLogger("Name");
+            var logger2 = Exercises.Singleton.Logger.GetLogger("Name");
+
+            Console.WriteLine(logger1 == logger2);
+
+            var logger3 = Exercises.Singleton.Logger.GetLogger("Name2");
+            Console.WriteLine(logger1 == logger3);
+
+
+            #endregion
             #region Prototye
 
             //var c = new ContextMenu();
@@ -53,15 +74,15 @@ namespace DesignPatterns
             //c.Duplicate(new Circle());
             //c.Duplicate(new Square());
 
-            var timeLine = new Timeline();
-            var text = new Text("Text 1");
-            timeLine.AddComponent(text);
-            var audio = new Audio();
-            timeLine.AddComponent(audio);
-            var context = new Exercises.Protorype.ContextMenu(timeLine);
+            //var timeLine = new Timeline();
+            //var text = new Text("Text 1");
+            //timeLine.AddComponent(text);
+            //var audio = new Audio();
+            //timeLine.AddComponent(audio);
+            //var context = new Exercises.Protorype.ContextMenu(timeLine);
 
-            context.Duplicate(text);
-            timeLine.Show();
+            //context.Duplicate(text);
+            //timeLine.Show();
 
             #endregion
 
@@ -89,7 +110,6 @@ namespace DesignPatterns
 
 
             #endregion
-
 
             #region Bridge
 
