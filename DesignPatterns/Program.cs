@@ -40,6 +40,8 @@ using DesignPatterns.Exercises.Proxy;
 using DesignPatterns.Prototype;
 using DesignPatterns.Exercises.Protorype;
 using DesignPatterns.Singleton;
+using DesignPatterns.Factory;
+using DesignPatterns.Exercises.Factory;
 
 namespace DesignPatterns
 {
@@ -48,8 +50,21 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+            #region Factory
+
+            //new ProductsController().GetProductsList();
+
+            var scheduler = new Scheduler();
+            scheduler.Schedule(new Event());
+
+            var arabic = new ArabianScheduler();
+            arabic.Schedule(new Event());
+
+            #endregion
+
+
             #region Singleton
-                        
+
             //var config = ConfigManager.GetInstance();
             //config.Add("name", "William");
 
@@ -57,13 +72,13 @@ namespace DesignPatterns
             //config2.Get("name");
 
 
-            var logger1 = Exercises.Singleton.Logger.GetLogger("Name");
-            var logger2 = Exercises.Singleton.Logger.GetLogger("Name");
+            //var logger1 = Exercises.Singleton.Logger.GetLogger("Name");
+            //var logger2 = Exercises.Singleton.Logger.GetLogger("Name");
 
-            Console.WriteLine(logger1 == logger2);
+            //Console.WriteLine(logger1 == logger2);
 
-            var logger3 = Exercises.Singleton.Logger.GetLogger("Name2");
-            Console.WriteLine(logger1 == logger3);
+            //var logger3 = Exercises.Singleton.Logger.GetLogger("Name2");
+            //Console.WriteLine(logger1 == logger3);
 
 
             #endregion
