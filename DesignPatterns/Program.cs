@@ -42,6 +42,9 @@ using DesignPatterns.Exercises.Protorype;
 using DesignPatterns.Singleton;
 using DesignPatterns.Factory;
 using DesignPatterns.Exercises.Factory;
+using DesignPatterns.AbstractFactory.App;
+using DesignPatterns.AbstractFactory.Material;
+using DesignPatterns.Exercises.AbstractFactory;
 
 namespace DesignPatterns
 {
@@ -50,15 +53,34 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+            #region Abstract Factory
+
+            //new ContactForm().Render(AbstractFactory.Theme.MATERIAL);
+            //new ContactForm().Render(AbstractFactory.Theme.ANT);
+
+            //new ContactForm().Render(new MaterialButton());
+            //new ContactForm().Render(new MaterialTextBox());
+
+            //var home = new HomePage();
+            //home.SetGoal(Goal.BUILD_MUSCLE);
+
+            var home = new HomePage();
+            home.SetGoal(new BuildMuscleFactory());
+            home.SetGoal(new WieghtLossFactory());
+            
+
+            #endregion
+
+
             #region Factory
 
-            //new ProductsController().GetProductsList();
+            ////new ProductsController().GetProductsList();
 
-            var scheduler = new Scheduler();
-            scheduler.Schedule(new Event());
+            //var scheduler = new Scheduler();
+            //scheduler.Schedule(new Event());
 
-            var arabic = new ArabianScheduler();
-            arabic.Schedule(new Event());
+            //var arabic = new ArabianScheduler();
+            //arabic.Schedule(new Event());
 
             #endregion
 
